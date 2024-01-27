@@ -262,18 +262,18 @@ case $STEP in
             fi
 
             # Check if Proxmox repository entry exists in /etc/apt/sources.list
-            if ! grep -q "$proxmox_repo" /etc/apt/sources.list; then
-                echo -e "${GREEN}[+]${NC} Adding Proxmox repository entry to /etc/apt/sources.list${NC}"
-                echo "$proxmox_repo" >> /etc/apt/sources.list
-            fi
+          #   if ! grep -q "$proxmox_repo" /etc/apt/sources.list; then
+           #      echo -e "${GREEN}[+]${NC} Adding Proxmox repository entry to /etc/apt/sources.list${NC}"
+           #      echo "$proxmox_repo" >> /etc/apt/sources.list
+           #  fi
 
             # Remove Proxmox enterprise repository
-            echo -e "${GREEN}[+]${NC} Removing Proxmox enterprise repository"
-            rm /etc/apt/sources.list.d/pve-enterprise.list 2>/dev/null
+            # echo -e "${GREEN}[+]${NC} Removing Proxmox enterprise repository"
+           #  rm /etc/apt/sources.list.d/pve-enterprise.list 2>/dev/null
 
             # Remove ceph-quincy repository
-            echo -e "${GREEN}[+]${NC} Removing ceph-quincy repository"
-            rm /etc/apt/sources.list.d/ceph.list 2>/dev/null
+            # echo -e "${GREEN}[+]${NC} Removing ceph-quincy repository"
+            # rm /etc/apt/sources.list.d/ceph.list 2>/dev/null
 
             # APT update/upgrade
             run_command "Running APT Update" "info" "apt update"
